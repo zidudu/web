@@ -42,12 +42,12 @@ int main()
 				int y = 0;
 				if (board[x][y]=='x' && board[x][y + 1] =='x' && board[x][y + 2] == 'x') {
 					cout << "x가 이겼습니다";
-					sum += 1;
+					exit(0);
 					break;
 				}
 				else if (board[x][y] =='o' && board[x][y + 1]=='o' && board[x][y + 2] == 'o') {
 					cout << "o가 이겼습니다";
-					sum += 1;
+					exit(0);
 					break;
 
 				}
@@ -58,12 +58,12 @@ int main()
 			int x = 0;
 			if (board[x][y]=='x' && board[x + 1][y] =='x' && board[x + 2][y] == 'x') {
 				cout << "x가 이겼습니다";
-				sum += 1;
+				exit(0);
 				break;
 			}
 			else if (board[x][y]=='o' && board[x + 1][y]=='o' && board[x + 2][y] == 'o') {
 				cout << "o가 이겼습니다";
-				sum += 1;
+				exit(0);
 				break;
 
 			}
