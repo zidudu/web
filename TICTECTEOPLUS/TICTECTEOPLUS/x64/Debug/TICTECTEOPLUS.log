@@ -1,3 +1,0 @@
-﻿  TICTECTEOPLUS.cpp
-C:\Users\COM\Documents\TICTECTEOPLUS\TICTECTEOPLUS.cpp(21,12): warning C4805: '==': 연산에 'int' 형식과 'bool' 형식을 함께 사용하는 것은 안전하지 않습니다.
-  TICTECTEOPLUS.vcxproj -> C:\Users\COM\Documents\TICTECTEOPLUS\x64\Debug\TICTECTEOPLUS.exe
