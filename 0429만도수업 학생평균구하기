@@ -1,0 +1,79 @@
+#include <iostream>
+using namespace std;
+
+class test {
+    int gug;
+    int eng;
+    int math;
+};
+int main()
+{
+    //이름은 행, 과목은 열
+    int list[10][3];
+    
+    //1.입력받기
+    for (int i = 0; i < 10; i++) {
+        cout << i << " 학번 학생 국어,영어,수학 입력->";
+        for (int j = 0; j < 3; j++) {
+            cin >> list[i][j];
+        }
+    }
+    //2.과목별 최저 점수와 학번을 출력해라
+    //과목별로 한사람씩 검사해서 변수에 넣기
+    int gug_min=list[0][0];int math_min=list[0][2];int eng_min= list[0][1];
+    int x, y, z;
+    int i;
+    for (i = 1; i < 10; i++) {
+        if (gug_min< list[i][0]) {
+            gug_min = list[i][0];
+             x = i;
+        }
+        if (eng_min <list[i][1]) {
+            eng_min = list[i][1];
+             y = i;
+        }
+        if (math_min < list[i][2]) {
+            math_min = list[i][2];
+             z = i;
+        }
+    }
+    cout << "국어 최저 : " << gug_min<<" "<<i << endl;
+    cout << "영어 최저 : " << eng_min<<" " << i<<endl;
+    cout << "수학 최저 : " << math_min<<" "<<i<<endl;
+
+    //3.평균값 낮은 순서부터 출력
+    //각 점수를 더하고 평균을 내서 그것을 비교하여 출력
+    int ave[10] = { 0 };
+    int gug_ave=0, math_ave=0, eng_ave=0;
+    //각 학생들의 평균 구하기
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 3; j++) {
+            ave[i] += list[i][j];
+       }
+        ave[i] /= 3;
+    }
+    //평균을 비교해 정렬하기
+    int ave_tmp;
+    int ttmp;
+    for (int i = 0; i < 9; i++) {
+        for(int j=i+1;j<10;j++)
+        if (ave[i]>ave[j]) {
+            ave_tmp = ave[i];
+            ave[i] = ave[j];
+            ave[j] = ave_tmp;
+            for (int k = 0; k < 3; k++) {
+                ttmp = list[i][k];
+                list[i][k] = list[j][k];
+                list[j][k] = ttmp;
+            }
+        }
+    }
+    for (int i = 0; i < 10; i++) {
+        cout << "\n학번\t국어\t영어\t수학\t평균\n";
+        cout << i <<"\t" << list[i][0] <<"\t" << list[i][1] <<"\t" << list[i][2] <<"\t" << ave[i];
+        cout << endl;
+    }
+    
+
+
+}
