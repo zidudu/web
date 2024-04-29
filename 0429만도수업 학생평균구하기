@@ -37,9 +37,9 @@ int main()
              z = i;
         }
     }
-    cout << "국어 최저 : " << gug_min<<" "<<i << endl;
-    cout << "영어 최저 : " << eng_min<<" " << i<<endl;
-    cout << "수학 최저 : " << math_min<<" "<<i<<endl;
+    cout << "국어 최저 : " << gug_min<<" "<<x << endl;
+    cout << "영어 최저 : " << eng_min<<" " << y<<endl;
+    cout << "수학 최저 : " << math_min<<" "<<z<<endl;
 
     //3.평균값 낮은 순서부터 출력
     //각 점수를 더하고 평균을 내서 그것을 비교하여 출력
