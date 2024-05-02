@@ -1,0 +1,83 @@
+
+#include <iostream>
+using namespace std;
+int main()
+{	
+	//배열 생성
+	string array[5];
+	//옵션 변수
+	string option;
+	//카운트 변수
+	int top=-1;
+	while (true)
+	{
+		//top이 없을때
+		if (top == -1) {
+			cout << "현재 top은 없습니다"<< endl;
+			
+		}
+		//top 있을때
+		else {
+			cout << "현재 top :" << top << ", " << array[top] << endl;
+		}
+		//옵션 입력
+		cout << "스택에 입력하세요(push:넣기, pop:삭제, X:종료, list:전체 리스트 보기) :";
+		cin >> option;
+		//입력
+		if (option == "push") {
+			//스택 꽉찼을때
+			if (top >3 ) {
+				cout << "스택이 꽉차서 넣을 수 없습니다ㅠㅠ" << endl;
+			}
+			//문자 스택 넣기
+			else {
+				top++;
+				cout << "어떤 문자를 넣을 건가요? :";
+				cin >> array[top];
+				cout << array[top] << " 의 문자를 top에 넣었습니다!" << endl;
+			}
+		}
+		//제거
+		else if (option == "pop") {
+			//top이 -1일때, 즉 값이 없을때
+			if (top == -1) {
+				cout << "값이 없어서 빼낼 수 없습니다";
+			}
+			else {
+				//값 제거
+				cout << "top의 " << array[top] << " 자료를 제거했습니다" << endl;
+				array[top] = " "; //값이 비어있게 만듬
+				top--; 
+				
+			}
+		}
+		//종료할때
+		else if (option == "X") {
+			cout << "프로그램을 종료합니다" << endl;
+			return 0;
+		}
+		//전체 스택 값들 보기
+		else if (option == "list") {
+			//스택에 값이 없을때
+			if (top == -1) {
+				cout << "스택에 값이 없습니다" << endl;
+			}
+			//값들 보여주기
+			else {
+				cout << "<<전체 리스트>> " << endl;
+				cout << "*************************" << endl;
+				for (int i = 0; i <= top; i++) {
+					cout << array[i] << " "<<endl;
+				}
+				cout << "*************************" << endl;
+			}
+		}
+		//입력 값이 이상할때
+		else {
+			cout << "입력 값이 이상합니다" << endl;
+		}
+	}
+}
+	
+
+
