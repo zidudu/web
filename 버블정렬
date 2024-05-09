@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstdlib>  
+#include <ctime>   
+
+using namespace std;
+int main() {
+     //배열 생성
+    int list[5] = {15,1,8,3,11};  // 10개의 요소를 가진 배열 선언
+    //버블정렬 전 리스트 출력
+    cout << "버블정렬 전 리스트 :\n";
+    for (int i = 0; i < 5; i++)
+        cout << list[i] << " ";
+    cout << endl;
+
+    //버블정렬하여 값 작은 순서대로 정렬
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            //앞 요소가 뒤 요소보다 크면 두개의 값을 바꾼다
+            if (list[j] > list[j + 1]) {
+                int temp = list[j];
+                list[j] = list[j + 1];
+                list[j + 1] = temp;
+            }
+        }
+    }
+    //버블정렬 후 리스트 출력
+    cout << "버블정렬 후 리스트 :\n";
+    for (int i = 0; i < 5; i++)
+        cout << list[i] << " ";
+    cout << endl;
+
+    return 0;
+}
